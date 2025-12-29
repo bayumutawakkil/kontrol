@@ -227,7 +227,6 @@ Gagal terhubung ke database!
 ### SQLException: Unknown database 'kas_organisasi_db'
 **Solusi:** Buat database menggunakan skrip `database_kas.sql`
 
-## Catatan untuk Penilai
 
 Proyek ini mendemonstrasikan:
 1. **Prinsip OOP yang tepat**: Inheritance, Polymorphism, Encapsulation, Abstraction
@@ -237,14 +236,10 @@ Proyek ini mendemonstrasikan:
 5. **CLI yang user-friendly**: Sistem menu yang jelas dengan output yang diformat
 6. **Solusi masalah nyata**: Aplikasi menyelesaikan masalah transparansi pengelolaan kas organisasi mahasiswa
 
-Semua persyaratan UAS diimplementasikan dan ditandai dengan jelas dalam komentar kode dengan format `// [UAS Point: ...]`.
-
 ## Pembuat
 
-**Proyek Ujian Akhir Semester PBO**  
+**Tugas Besar pengganti Ujian Akhir Semester PBO**
+**Nama:** Bayu Mutawakkil
+**NIM:** 2411522023
 **Nama Proyek:** KONTROL - Sistem Manajemen Kas Organisasi  
 **Aplikasi:** Kas BEM/Himpunan Mahasiswa
-
----
-
-**Semoga sukses dengan ujian UAS Anda!**
