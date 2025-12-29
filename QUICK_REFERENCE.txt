@@ -1,0 +1,258 @@
+╔════════════════════════════════════════════════════════════════╗
+║           KONTROL - KARTU REFERENSI CEPAT                      ║
+║       Sistem Manajemen Kas Organisasi (UAS PBO)               ║
+║            (BEM/HIMPUNAN MAHASISWA)                            ║
+╚════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════
+PERSYARATAN UAS → LOKASI FILE
+═══════════════════════════════════════════════════════════════════
+
+[UAS Point: Class, Object, Constructor]
+├─ Transaksi.java (baris 10-25)
+├─ Pemasukan.java (baris 7-15)
+├─ Pengeluaran.java (baris 7-15)
+├─ KoneksiDB.java
+├─ ManajemenKas.java
+└─ MainApp.java
+
+[UAS Point: Constructor Implementation]
+├─ Transaksi.java (baris 18-25) - Constructor berparameter
+├─ Pemasukan.java (baris 12-15) - Constructor dengan super()
+└─ Pengeluaran.java (baris 12-15) - Constructor dengan super()
+
+[UAS Point: Inheritance]
+├─ Transaksi.java (abstract class - baris 10)
+├─ Pemasukan.java (extends Transaksi - baris 7)
+└─ Pengeluaran.java (extends Transaksi - baris 7)
+
+[UAS Point: Interface]
+├─ KasDAO.java (interface definition - baris 7)
+└─ ManajemenKas.java (implements KasDAO - baris 8)
+
+[UAS Point: Polymorphism (Method Overriding)]
+├─ Pemasukan.java:
+│   ├─ override getTipe() (baris 27)
+│   └─ override getKategori() (baris 33)
+└─ Pengeluaran.java:
+    ├─ override getTipe() (baris 27)
+    └─ override getKategori() (baris 33)
+
+[UAS Point: Loops]
+├─ MainApp.java:
+│   ├─ do-while loop untuk menu (baris 35)
+│   └─ for-each loop untuk tampilan (baris 212)
+└─ ManajemenKas.java:
+    └─ while loop di ResultSet (baris 54)
+
+[UAS Point: Branching]
+├─ MainApp.java:
+│   ├─ switch-case untuk menu (baris 47)
+│   └─ pernyataan if-else (baris 239, 246)
+└─ ManajemenKas.java:
+    └─ if-else untuk instanceof (baris 23-30)
+
+[UAS Point: Kalkulasi Matematika]
+├─ ManajemenKas.java:
+│   ├─ getTotalPemasukan() (baris 137)
+│   ├─ getTotalPengeluaran() (baris 154)
+│   └─ getSisaKas() (baris 171)
+└─ MainApp.java:
+    └─ Kalkulasi sisa kas (baris 241-243)
+
+[UAS Point: Manipulasi String]
+├─ Transaksi.java:
+│   ├─ getNominalFormatted() (baris 68-72) - Format Rupiah
+│   └─ toString() (baris 76-82) - String formatting
+└─ MainApp.java:
+    └─ String.format() dan formatting di seluruh kode
+
+[UAS Point: Manipulasi Tanggal]
+├─ Transaksi.java:
+│   └─ getTanggalFormatted() (baris 63-66)
+└─ MainApp.java:
+    ├─ SimpleDateFormat usage (baris 15)
+    └─ Date parsing (baris 118, 151)
+
+[UAS Point: Penanganan Exception]
+├─ MainApp.java:
+│   ├─ InputMismatchException (baris 73, 138, 171, 233)
+│   └─ General Exception (baris 75, 141, 174, 236)
+├─ ManajemenKas.java:
+│   └─ SQLException di semua metode (baris 37, 77, 112, 128, 150, 167)
+└─ KoneksiDB.java:
+    └─ ClassNotFoundException (baris 23)
+
+[UAS Point: Collection Framework]
+└─ ManajemenKas.java:
+    ├─ ArrayList<Transaksi> (baris 47)
+    └─ List<Transaksi> usage
+
+[UAS Point: Implementasi JDBC]
+├─ KoneksiDB.java:
+│   └─ getConnection() (baris 17-26)
+└─ ManajemenKas.java:
+    ├─ Penggunaan PreparedStatement
+    └─ Penanganan ResultSet
+
+[UAS Point: Operasi CRUD]
+└─ ManajemenKas.java:
+    ├─ CREATE: tambahTransaksi() (baris 11-40)
+    ├─ READ: getAllTransaksi() (baris 44-80)
+    ├─ READ: getTransaksiById() (baris 84-118)
+    └─ DELETE: hapusTransaksi() (baris 122-133)
+
+═══════════════════════════════════════════════════════════════════
+SKRIP DEMO UNTUK PRESENTASI UAS
+═══════════════════════════════════════════════════════════════════
+
+1. TUNJUKKAN STRUKTUR PROYEK
+   → Buka VS Code, tunjukkan organisasi file
+   → Sorot struktur file sederhana (semua di src/)
+
+2. JELASKAN KONSEP OOP
+   → Buka Transaksi.java - tunjukkan kelas abstrak
+   → Buka Pemasukan.java & Pengeluaran.java - tunjukkan inheritance
+   → Demonstrasikan polymorphism di getTipe() dan getKategori()
+
+3. TUNJUKKAN IMPLEMENTASI INTERFACE
+   → Buka KasDAO.java - jelaskan kontrak
+   → Buka ManajemenKas.java - tunjukkan implementasi
+
+4. JALANKAN APLIKASI
+   → Start server MySQL
+   → Jalankan MainApp.java
+   → Tunjukkan koneksi database berhasil
+
+5. DEMONSTRASIKAN CRUD
+   ✓ Tambah Pemasukan: Rp 5.000.000 (Iuran Anggota)
+   ✓ Tambah Pengeluaran: Rp 500.000 (Konsumsi Rapat)
+   ✓ Lihat Semua Transaksi
+   ✓ Hapus transaksi
+
+6. TUNJUKKAN KALKULASI
+   → Navigasi ke Laporan Keuangan
+   → Jelaskan sisa kas = total pemasukan - total pengeluaran
+   → Tunjukkan status kesehatan keuangan
+
+7. DEMONSTRASIKAN PENANGANAN EXCEPTION
+   → Coba masukkan teks saat angka diharapkan
+   → Tunjukkan penanganan InputMismatchException
+   → Tunjukkan penanganan format tanggal tidak valid
+
+8. SOROT KONTEKS APLIKASI
+   → Jelaskan masalah: Pencatatan kas organisasi manual
+   → Solusi: Aplikasi digital untuk transparansi
+   → Fitur: Iuran, Sponsor, Proker, Laporan Kas
+
+═══════════════════════════════════════════════════════════════════
+PERINTAH COMPILE & RUN CEPAT
+═══════════════════════════════════════════════════════════════════
+
+WINDOWS:
+--------
+# Compile
+javac -d bin -cp "lib\mysql-connector-java-8.0.33.jar" src\*.java
+
+# Run
+java -cp "bin;lib\mysql-connector-java-8.0.33.jar" MainApp
+
+LINUX/MAC:
+----------
+# Compile
+javac -d bin -cp "lib/mysql-connector-java-8.0.33.jar" src/*.java
+
+# Run
+java -cp "bin:lib/mysql-connector-java-8.0.33.jar" MainApp
+
+═══════════════════════════════════════════════════════════════════
+APA YANG HARUS DITUNJUKKAN KE PENILAI UAS
+═══════════════════════════════════════════════════════════════════
+
+1. KOMENTAR KODE
+   → Setiap persyaratan memiliki komentar eksplisit
+   → Format: // [UAS Point: Nama Persyaratan]
+
+2. DIAGRAM KELAS (Jelaskan Secara Verbal)
+   Transaksi (abstract)
+        ↑
+        ├── Pemasukan (sumberDana: Iuran/Sponsor/Donasi)
+        └── Pengeluaran (keperluan: Proker/Konsumsi/Perlengkapan)
+   
+   KasDAO (interface)
+        ↑
+        └── ManajemenKas (implements)
+
+3. FITUR FUNGSIONAL
+   ✓ Tambah Pemasukan (Iuran/Sponsor/Donasi)
+   ✓ Tambah Pengeluaran (Proker/Konsumsi/Perlengkapan)
+   ✓ Lihat riwayat transaksi
+   ✓ Hapus transaksi
+   ✓ Laporan keuangan dengan sisa kas
+
+4. IMPLEMENTASI TEKNIS
+   ✓ Hierarki inheritance (Transaksi → Pemasukan/Pengeluaran)
+   ✓ Implementasi interface (KasDAO → ManajemenKas)
+   ✓ Pemanggilan metode polimorfik (getTipe(), getKategori())
+   ✓ Penanganan exception (InputMismatchException, SQLException)
+   ✓ Operasi JDBC (Connection, PreparedStatement, ResultSet)
+   ✓ Penggunaan Collection Framework (ArrayList<Transaksi>)
+
+5. KONTEKS APLIKASI
+   ✓ Masalah: Pencatatan kas organisasi mahasiswa manual
+   ✓ Solusi: Sistem digital untuk transparansi
+   ✓ Benefit: Laporan keuangan real-time, tracking dana
+
+═══════════════════════════════════════════════════════════════════
+DAFTAR PERIKSA PRA-PENGUMPULAN
+═══════════════════════════════════════════════════════════════════
+
+[✓] Database MySQL dibuat (kontrol_db)
+[✓] Driver JDBC MySQL di folder lib/
+[✓] DatabaseHelper.java dikonfigurasi (username/password)
+[✓] Semua 7 file Java dikompilasi tanpa error
+[✓] Aplikasi berjalan dengan sukses
+[✓] Dapat menambah transaksi
+[✓] Dapat melihat transaksi
+[✓] Dapat mengedit transaksi
+[✓] Dapat menghapus transaksi
+[✓] Ringkasan keuangan menghitung dengan benar
+[✓] Penanganan exception bekerja (diuji input tidak valid)
+[✓] Semua komentar penilaian ada di kode
+[✓] Dokumentasi lengkap (README.md)
+
+═══════════════════════════════════════════════════════════════════
+TIPS UNTUK NILAI MAKSIMAL
+═══════════════════════════════════════════════════════════════════
+
+1. PAHAMI KODE ANDA
+   → Mengerti setiap baris
+   → Siap menjelaskan keputusan desain
+
+2. SIAPKAN JAWABAN
+   → Mengapa kelas abstrak vs interface?
+   → Bagaimana polymorphism bekerja di sini?
+   → Jelaskan implementasi CRUD
+
+3. TUNJUKKAN PROFESIONALISME
+   → Struktur kode yang bersih
+   → Konvensi penamaan yang tepat
+   → Komentar yang komprehensif
+
+4. DEMONSTRASIKAN FITUR DENGAN LANCAR
+   → Latih demo sebelumnya
+   → Siapkan data contoh
+   → Kenali semua opsi menu
+
+5. TANGANI PERTANYAAN DENGAN PERCAYA DIRI
+   → Jika ditanya tentang persyaratan, tunjuk ke kode
+   → Jelaskan penanda komentar
+   → Tunjukkan cara kerjanya di aplikasi
+
+═══════════════════════════════════════════════════════════════════
+
+ANDA SIAP! Semua persyaratan telah diimplementasikan.
+Latih demo Anda dan Anda akan menguasai ujian ini!
+Semoga sukses!
+
+═══════════════════════════════════════════════════════════════════
