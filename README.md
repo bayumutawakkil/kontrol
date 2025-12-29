@@ -197,18 +197,18 @@ STATUS: Kondisi kas sehat.
 ## Komentar Kode untuk Penilaian
 
 Semua file kode menyertakan **komentar eksplisit** yang menandai di mana setiap persyaratan UAS diimplementasikan:
-- `// [UAS Point: Class & Object]`
-- `// [UAS Point: Constructor]`
-- `// [UAS Point: Inheritance]`
-- `// [UAS Point: Interface]`
-- `// [UAS Point: Polymorphism]`
-- `// [UAS Point: Loop]`
-- `// [UAS Point: Branching]`
-- `// [UAS Point: Math Calculations]`
-- `// [UAS Point: String Manipulation]`
-- `// [UAS Point: Exception Handling]`
-- `// [UAS Point: Collection Framework]`
-- `// [UAS Point: JDBC & CRUD]`
+- `// Class & Object`
+- `// Constructor`
+- `// Inheritance`
+- `// Interface`
+- `// Polymorphism`
+- `// Loop`
+- `// Branching`
+- `// Math Calculations`
+- `// String Manipulation`
+- `// Exception Handling`
+- `// Collection Framework`
+- `// JDBC & CRUD`
 
 ## Troubleshooting
 
